@@ -2,7 +2,6 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flower_app/pages/login.dart';
-import 'package:flower_app/shared/colors.dart';
 import 'package:flower_app/shared/constants.dart';
 import 'package:flower_app/shared/snackbar.dart';
 import 'package:flutter/material.dart';
