@@ -8,10 +8,10 @@ const decorationTextfield = InputDecoration(
   ),
   focusedBorder: OutlineInputBorder(
     borderSide: BorderSide(
-      color: Colors.grey,
+      color: Colors.black,
     ),
   ),
-  // fillColor: Colors.red,
+   //fillColor: Colors.red,
   filled: true,
   contentPadding: EdgeInsets.all(8),
 );

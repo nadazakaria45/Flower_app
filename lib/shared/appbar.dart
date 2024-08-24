@@ -16,12 +16,12 @@ class ProductsAndPrice extends StatelessWidget {
         Stack(
           children: [
             Positioned(
-              bottom: 24,
+              bottom: 22,
               child: Container(
                   child: Text(
                     "${cartt.itemcount}",
                     style: TextStyle(
-                        fontSize: 16, color: Color.fromARGB(255, 0, 0, 0)),
+                        fontSize: 16, color: Color.fromARGB(255, 0, 0, 0),fontWeight: FontWeight.bold),
                   ),
                   padding: EdgeInsets.all(5),
                   decoration: BoxDecoration(
@@ -37,7 +37,7 @@ class ProductsAndPrice extends StatelessWidget {
                       ),
                     );
               },
-              icon: Icon(Icons.add_shopping_cart),
+              icon: Icon(Icons.add_shopping_cart,),
             ),
           ],
         ),
@@ -45,7 +45,8 @@ class ProductsAndPrice extends StatelessWidget {
           padding: const EdgeInsets.only(right: 12),
           child: Text(
             "\$ ${cartt.price}",
-            style: TextStyle(fontSize: 18),
+            style: TextStyle(fontSize: 18,
+            fontWeight: FontWeight.bold,),
           ),
         ),
       ],

@@ -1,4 +1,3 @@
-
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:firebase_auth/firebase_auth.dart';
@@ -44,9 +43,7 @@ class _ForgotPasswordState extends State<ForgotPassword> {
     if (!mounted) return;
 
     Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(builder: (context) => Login())
-    );
+        context, MaterialPageRoute(builder: (context) => Login()));
   }
 
   @override
@@ -60,10 +57,16 @@ class _ForgotPasswordState extends State<ForgotPassword> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 76, 141, 95),
       appBar: AppBar(
-        title: Text("Reset Password"),
-        elevation: 0,
-        backgroundColor: appbarGreen,
+        title: Text(
+          "Reset Password",
+          style: TextStyle(
+            fontSize: 28,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        backgroundColor: Color.fromARGB(255, 76, 141, 95),
       ),
       body: Center(
         child: Padding(
@@ -73,27 +76,36 @@ class _ForgotPasswordState extends State<ForgotPassword> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Enter your email to rest your password.",
-                    style: TextStyle(fontSize: 18)),
+                Text(
+                  "Enter your email to rest your password...",
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
                 SizedBox(
                   height: 33,
                 ),
                 TextFormField(
                     // we return "null" when something is valid
                     validator: (email) {
-                      return email!.contains(RegExp(   // للتحقق من الأنماط داخل النصوص
+                      return email!.contains(RegExp(
+                              // للتحقق من الأنماط داخل النصوص
                               r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+"))
                           ? null
                           : "Enter a valid email";
                     },
-                    autovalidateMode: AutovalidateMode.onUserInteraction, // تحقق من صحة البيانات تلقائيا عند التفاعل مع الحقل
+                    autovalidateMode: AutovalidateMode
+                        .onUserInteraction, // تحقق من صحة البيانات تلقائيا عند التفاعل مع الحقل
                     controller: emailController,
                     keyboardType: TextInputType.emailAddress,
                     obscureText: false,
                     decoration: decorationTextfield.copyWith(
                         hintText: "Enter Your Email : ",
-                        suffixIcon: Icon(Icons.email)
-                        )),
+                        suffixIcon: Icon(
+                          Icons.email,
+                          color: Colors.blue,
+                        ))),
                 const SizedBox(
                   height: 33,
                 ),
@@ -106,18 +118,21 @@ class _ForgotPasswordState extends State<ForgotPassword> {
                     }
                   },
                   style: ButtonStyle(
-                    backgroundColor: WidgetStateProperty.all(BTNgreen), //  تحكم فحاجه معينه على حسب الخاصيه اللي جواها
+                    backgroundColor: WidgetStateProperty.all(Colors
+                        .black), //  تحكم فحاجه معينه على حسب الخاصيه اللي جواها
                     padding: WidgetStateProperty.all(EdgeInsets.all(12)),
                     shape: WidgetStateProperty.all(RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(8))),
+                    elevation: MaterialStateProperty.all(20),
                   ),
                   child: isLoading
-                      ? CircularProgressIndicator( // علامة التحميل وتحديد لونها
+                      ? CircularProgressIndicator(
+                          // علامة التحميل وتحديد لونها
                           color: Colors.white,
                         )
                       : Text(
                           "Reset Password",
-                          style: TextStyle(fontSize: 19),
+                          style: TextStyle(fontSize: 19, color: Colors.blue),
                         ),
                 ),
               ],

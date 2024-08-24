@@ -10,7 +10,7 @@ class Item { // class  to use as datatype in the list.
 
   final List<Item> items = [
     Item(price: 122.99 , name : "product 1" , imgPath: "assets/img/1.webp" ),
-    Item(price: 512.99 , name : "product 2"  , imgPath: "assets/img/2.webp" , location: "Another Shop "),
+    Item(price: 512.99 , name : "product 2" , imgPath: "assets/img/2.webp" , location: "Another Shop "),
     Item(price: 132.99 , name : "product 3" , imgPath: "assets/img/3.webp"),
     Item(price: 612.99 , name : "product 4" , imgPath: "assets/img/4.webp"),
     Item(price: 412.99 , name : "product 5" , imgPath: "assets/img/5.webp"),

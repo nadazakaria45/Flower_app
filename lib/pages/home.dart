@@ -18,12 +18,13 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //backgroundColor: appbarGreen,
       appBar: AppBar(
           actions: [
             ProductsAndPrice()
           ],
           backgroundColor: appbarGreen,
-          title: Text("Home"),
+          title: Text("Home",style: TextStyle(fontWeight: FontWeight.bold,),),
         ),
         drawer: Drawer(
           child: Column(
@@ -32,15 +33,16 @@ class Home extends StatelessWidget {
               Column(
                 children: [
                   UserAccountsDrawerHeader(
+                    
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                          image: AssetImage("assets/img/222.jpg"),
+                          image: AssetImage("assets/img/11.webp"),
                           fit: BoxFit.cover),
                     ),
                     currentAccountPicture: CircleAvatar(
                         radius: 55,
-                        backgroundImage: AssetImage("assets/img/333.jpg")),
-                    accountEmail: Text("nada@yahoo.com"),
+                        backgroundImage: AssetImage("assets/img/10.webp")),
+                    accountEmail: Text("nadazeko98@gmail.com"),
                     accountName: Text("Nada Zakaria",
                         style: TextStyle(
                           color: Color.fromARGB(255, 255, 255, 255),
@@ -80,7 +82,7 @@ class Home extends StatelessWidget {
               Container(
                 margin: EdgeInsets.only(bottom: 12),
                 child: Text("Developed by Nada Zakaria @2024",
-                    style: TextStyle(fontSize: 16)),
+                    style: TextStyle(fontSize: 16,fontWeight: FontWeight.bold,)),
               )
             ],
           ),
@@ -114,7 +116,7 @@ class Home extends StatelessWidget {
                       )
                     ]),
                     footer: GridTileBar(
-          // backgroundColor: Color.fromARGB(66, 73, 127, 110),
+                              // backgroundColor: Color.fromARGB(66, 73, 127, 110),
                       trailing:  Consumer<Cart>(builder: ((context, Carttt, child) {
                         return IconButton(
                             color: Color.fromARGB(255, 62, 94, 70),
@@ -123,9 +125,9 @@ class Home extends StatelessWidget {
                             },
                           icon: Icon(Icons.add));
                       })),
-          
+                              
                       leading: Text("\$ 12.99"),
-          
+                              
                       title: Text(
                         "",
                       ),

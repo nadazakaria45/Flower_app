@@ -15,9 +15,12 @@ class CheckOut extends StatelessWidget {
     return Consumer<Cart>(builder: ((context, Carttt,child) {
       return
     Scaffold(
+      backgroundColor: appbarGreen,
       appBar: AppBar(
         backgroundColor: appbarGreen,
-        title: Text("checkout screen"),
+        title: Text("checkout screen",style: TextStyle(
+          fontWeight: FontWeight.bold,
+        ),),
         actions: [ProductsAndPrice()],
       ),
       body: Column(
@@ -29,9 +32,9 @@ class CheckOut extends StatelessWidget {
                   padding: const EdgeInsets.all(8),
                   itemCount: Carttt.selectedProducts.length,
                   itemBuilder: (BuildContext context, int index) {
-                    return Card(
+                    return Card(                     
                       child: ListTile(
-                        title: Text(Carttt.selectedProducts[index].name),
+                        title: Text(Carttt.selectedProducts[index].name,style: TextStyle(fontWeight: FontWeight.bold,),),
                         subtitle: Text(
                             "${Carttt.selectedProducts[index].price} - ${Carttt.selectedProducts[index].location}"),
                         leading: CircleAvatar(
@@ -39,7 +42,7 @@ class CheckOut extends StatelessWidget {
                               Carttt.selectedProducts[index].imgPath),
                         ),
                         trailing: IconButton(
-                            onPressed: () {
+                            onPressed: (){
                               Carttt.delete(Carttt.selectedProducts[index]);
                             },
                             icon: Icon(Icons.remove)),
@@ -52,13 +55,14 @@ class CheckOut extends StatelessWidget {
             onPressed: () {},
             child: Text(
               "Pay \$${Carttt.price}",
-              style: TextStyle(fontSize: 19),
+              style: TextStyle(fontSize: 19,color: Colors.white,),
             ),
             style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(BTNpink),
+              backgroundColor: MaterialStateProperty.all(Colors.black),
               padding: MaterialStateProperty.all(EdgeInsets.all(12)),
               shape: MaterialStateProperty.all(RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8))),
+                  elevation: MaterialStateProperty.all(20),
             ),
           ),
         ],
